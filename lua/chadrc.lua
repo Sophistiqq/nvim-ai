@@ -6,19 +6,20 @@
 local M = {}
 
 M.base46 = {
-  theme = "jabuti",
+  theme = "material-deep-ocean",
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
     Variable = { bold = true },
-    ['@variable'] = { bold = true },
+    ["@variable"] = { bold = true },
   },
+  termguicolors = true,
+  -- transparency = true,
 }
 
 -- M.nvdash = { load_on_startup = true }
--- M.ui = {
---       tabufline = {
---          lazyload = false
---      }
--- }
+
+M.term = {
+  sizes = { sp = 0.2, float = 0.8, vsplit = 0.2 },
+}
 return M

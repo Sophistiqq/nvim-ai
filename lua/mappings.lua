@@ -14,20 +14,19 @@ map("n", "<C-Up>", "<C-w>k", { silent = true })
 map("n", "<C-Down>", "<C-w>j", { silent = true })
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
-
-local cmp = require("cmp")
+local cmp = require "cmp"
 
 cmp.setup {
   mapping = {
-    ["<Tab>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
-    ["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<Tab>"] = cmp.mapping.confirm { select = true, behavior = cmp.ConfirmBehavior.Replace },
+    ["<S-Tab>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
     -- next item using Down arrow
-    ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<Down>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
     -- previous item using Up arrow
-    ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<Up>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
   },
   sources = {
-    { name = "supermaven" },
+    -- { name = "supermaven" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "buffer" },
@@ -35,5 +34,5 @@ cmp.setup {
     { name = "luasnip" },
     { name = "treesitter" },
     { name = "path" },
-  }
+  },
 }
